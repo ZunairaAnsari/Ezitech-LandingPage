@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* CSS Variables */
 :root {
     --accent-70: rgba(34, 122, 255, 0.7);
@@ -30,6 +28,7 @@
     --success-5: rgba(97, 204, 47, 0.05);
     --success-hover: rgba(97, 204, 47, 0.85);
 }
+
 /* Header Top Styles */
 .header-top {
     padding: 10px 0;
@@ -42,6 +41,8 @@
     color: white;
     font-size: 14px;
     font-weight: 600;
+    position: relative;
+    z-index: 10;
 }
 
 /* Icon Styles */
@@ -72,19 +73,62 @@
     gap: 2px;
 }
 
-nav ul li {
-    padding: 10px 0;
+/* Main Section */
+.main {
+    position: relative;
     width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-
+    height: 100vh;
+    background-image: url('html-css-collage-concept-with-person.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0.8);
+    /* Adjust brightness for a light shadow effect */
+    z-index: 1;
 }
 
-.white-logo {
+.main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 83, 117, 0.495);
+    /* Light overlay color */
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    /* Inner shadow effect */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav .image img {
     filter: brightness(0) invert(1);
+}
+
+nav .navbar {
+    display: flex;
+}
+
+nav .navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .navbar ul li {
+    margin: 0 15px;
+}
+
+nav .navbar ul li a {
+    color: white !important;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
 }
